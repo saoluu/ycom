@@ -1,0 +1,87 @@
+<h1><%= product.the_title %> <%= product.the_edit_link %></h1>
+<h3>
+    <%= t('plugins.ecommerce.single.sku', default: 'Shared By') %>: <a href="<%= @post.the_field('profile-partner')%>" target="_blank"><span id="product_sku"><%= product.the_sku %></span></a>
+    <span class="pull-right"><%= raw product.the_featured_status %></span>
+     <span class="pull-right">
+                <% @post.get_fields('avatar-sharer').each do |url| %>
+                <div class="img-circle"><a href="<%= @post.the_field('profile-partner')%>" target="_blank"><%= image_tag(url, style: 'width: 90px; height: 90px;', class:"img-circle")%></a></div>
+                <% end %>
+     </span> </h3><div class="clearfix"></div>
+<hr/>
+            <!-- Main component for a primary marketing message or call to action -->
+<p class="test-class" ><span class="fa fa-share-alt" style="font-size: 14; font-weight: bold;"> About the Experience Pack : </span></h4><%= raw product.the_excerpt %></p>
+<hr/>
+<p class="test-class"><h4><span class="fa fa-dot-circle-o" style="font-size: 14;font-weight: bold; "> What we’ll do :</span></h4><%= raw @post.the_field('what-we-do-yo') %></p>
+<hr/>
+<p><h4><span class="fa fa-sun-o" style="font-size: 14; font-weight: bold;"> What we’ll provide :</span></h4> <div class="commentsss"> <%= raw @post.the_field('what-we-be-provide-yo') %></div></p>
+<hr/>
+<p class="test-class"><h4><span class="fa fa-map-marker" style="font-size: 14; font-weight: bold;"> Where we’ll be :</span></h4>  <%= raw @post.the_field('where-well-be-yo') %></p>
+<hr/>
+<p class="test-class"><h4><span class="fa fa-sticky-note" style="font-size: 14; font-weight: bold;"> Notes :</span></h4>  <%= raw @post.the_field('notes-yo') %></p>
+<hr/>
+<p class="test-class"><h4><span class="fa fa-book" style="font-size: 14; font-weight: bold;"> Flexible Policy :</span></h4>  <%= raw @post.the_field('hosts-policy-details-yo') %>
+<a  href="<%= @post.the_field('hosts-policy')%>" target="_blank" style="font-size: 14; font-weight: bold;"><h3>See Details Flexible Policy</h3></a>
+</p>
+<hr/>
+<p>                    <%= raw @post.the_field('maps-address') %> </p> 
+
+
+<script type="text/javascript">
+(function($) {
+	$.fn.shorten = function (settings) {
+	
+		var config = {
+			showChars: 100,
+			ellipsesText: "...",
+			moreText: "more",
+			lessText: "less"
+		};
+
+		if (settings) {
+			$.extend(config, settings);
+		}
+		
+		$(document).off("click", '.morelink');
+		
+		$(document).on({click: function () {
+
+				var $this = $(this);
+				if ($this.hasClass('less')) {
+					$this.removeClass('less');
+					$this.html(config.moreText);
+				} else {
+					$this.addClass('less');
+					$this.html(config.lessText);
+				}
+				$this.parent().prev().toggle();
+				$this.prev().slideToggle();
+				return false;
+			}
+		}, '.morelink');
+
+		return this.each(function () {
+			var $this = $(this);
+			if($this.hasClass("shortened")) return;
+			
+			$this.addClass("shortened");
+			var content = $this.html();
+			if (content.length > config.showChars) {
+				var c = content.substr(0, config.showChars);
+				var h = content.substr(config.showChars, content.length - config.showChars);
+				var html = c + '<span class="moreellipses"> </span><span class="morecontent"><span>' + h + '</span> <a href="#" class="morelink">' + config.ellipsesText + '' + config.moreText + '</a></span>';
+				$this.html(html);
+				$(".morecontent span").hide();
+			}
+		});
+		
+	};
+
+ })(jQuery);
+
+
+   $(".commentsss").shorten({
+    "showChars" : 0,
+    "lessText"  : "....................(Less Info)",
+    "moreText"  : "What we’ll provide (More Info.....)",
+});
+</script>

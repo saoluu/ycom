@@ -1,0 +1,23 @@
+<div class="row" style="min-height: 64px">
+    <div class="col-md-9">
+        <%= raw ecommerce_draw_breadcrumb %>
+    </div>
+
+    <div class="col-md-3">
+        <div class="well shopping_cart_box">
+            <% @cart ||= e_current_cart %>
+            <h4><%= t('.shopping_cart', default: 'Booking Services') %></h4>
+            <p><%= t('.total_items', default: '(%{qty}) items', qty: @cart.items_total) %>, <%= t('.total', default: 'Total') %>: <%= @cart.the_total_amount %></p>
+            <span>
+                <a href="<%= cama_ecommerce_post_type.the_url %>" class="btn btn-default btn-xs"><%= t('.products_list', default: 'Services list') %></a>
+                <% if (@cart.items_total > 0) %>
+                    <a href="<%= plugins_ecommerce_checkout_cart_path %>" class="btn btn-warning btn-xs"><%= t('.purchase', default: 'Booking') %></a>
+                <% end %>
+                <a href="<%= plugins_ecommerce_orders_path %>" class="btn btn-success btn-xs"><%= t('.my_orders', default: 'My Booking') %></a>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="clearfix">
+    <%= render partial: "/camaleon_cms/flash_messages.html.erb", locals:{ flash: (flash[:cama_ecommerce] || {}).with_indifferent_access} %>
+</div>

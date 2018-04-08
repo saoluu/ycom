@@ -1,0 +1,170 @@
+<% order ||= @order %>
+<div class="order_details">
+    <% unless defined?(as_partial) %>
+        <%= raw ecommerce_draw_breadcrumb %>
+        <h1><%= t('.title', default: 'Booking Details') %>: <%= order.slug %></h1>
+    <% end %>
+    <div class="basic_info">
+        <% if order.invoice_number.present? %><b><%= t('.invoice_number', default: 'Invoice Number') %>: </b> <%= order.invoice_number %><br> <% end %>
+        <% if order.received_at.present? %><b><%= t('.received_at', default: 'Received At') %>: </b> <%= order.the_received_at %><br> <% end %>
+        <b><%= t('.created_at', default: 'Created At') %>: </b> <%= order.created_at %><br>
+        <% if order.shipped_at.present? %><b><%= t('.shipped_at', default: 'Shipped At') %>: </b> <%= order.the_shipped_at %><br> <% end %>
+    </div>
+
+    <div>
+        <h4><%= t('.customer_info', default: 'Customer Info') %></h4>
+        <ul class="ec-list-orders-address">
+            <li><strong><%= t('.name', default: 'Name') %>:</strong> <span> <%= order.user.fullname %></span></li>
+            <li><strong><%= t('.email', default: 'Email') %>:</strong> <span> <%= order.user.email %></span></li>
+            <li><strong><%= t('.phone', default: 'Phone') %>:</strong>
+                <span> <%= order.user.get_option('phone') %></span></li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4><%= t('.billing_address', default: 'Pickup Address') %></h4>
+            <% detail = order.get_meta("billing_address", {}) %>
+            <ul class="ec-list-orders-address">
+                <li><strong><%= t('.address', default: 'Address') %>1:</strong> <%= detail[:address1] %></li>
+                <li><strong><%= t('.address', default: 'Address') %>2:</strong> <%= detail[:address2] %></li>
+                <li><strong><%= t('.city', default: 'City') %>:</strong> <%= detail[:city] %></li>
+                <li><strong><%= t('.state', default: 'State') %>:</strong> <%= detail[:state] %></li>
+                <li><strong><%= t('.zip_code', default: 'Zip code') %>:</strong> <%= detail[:zip] %></li>
+                <li><strong><%= t('.country', default: 'Country') %>:</strong> <%= detail[:country] %></li>
+                <li><strong><%= t('.phone_number', default: 'Phone Number') %>:</strong> <%= detail[:phone_number] %>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4><%= t('.shipping_address', default: 'Resident Address') %></h4>
+            <% detail = order.get_meta("shipping_address", {}) %>
+            <ul class="ec-list-orders-address">
+                <li><strong><%= t('.address', default: 'Address') %>1:</strong> <%= detail[:address1] %></li>
+                <li><strong><%= t('.address', default: 'Address') %>2:</strong> <%= detail[:address2] %></li>
+                <li><strong><%= t('.city', default: 'City') %>:</strong> <%= detail[:city] %></li>
+                <li><strong><%= t('.state', default: 'State') %>:</strong> <%= detail[:state] %></li>
+                <li><strong><%= t('.zip_code', default: 'Zip code') %>:</strong> <%= detail[:zip] %></li>
+                <li><strong><%= t('.country', default: 'Country') %>:</strong> <%= detail[:country] %></li>
+                <li><strong><%= t('.phone_number', default: 'Phone Number') %>:</strong> <%= detail[:phone_number] %>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4><%= t('.title_products', default: 'Services and Payments') %></h4>
+            <div id="totals_section">
+                <table class="table table-bordered">
+                    <tbody>
+                    <tr>
+                        <th><%= t('.qty', default: 'Quantity Guest') %></th>
+                        <th><%= t('.item', default: 'Item') %></th>
+                        <th><%= t('.booking_date', default: 'Booking Date') %></th>
+                        <th><%= t('.price', default: 'Price') %></th>
+                        <th><%= t('.tax', default: 'Tax') %></th>
+                        <th><%= t('.subtotal', default: 'Sub Total') %></th>
+                    </tr>
+                    
+                    <% order.product_items.decorate.each do |item| %>
+                        <tr>
+                            <td><%= item.qty %></td>
+                            <td><%= link_to(item.cache_the_title, item.the_url) %></td>
+                            <td><%= item.try(:booking_date).try(:strftime, '%A, %d %b %Y %l:%M %p') %></td>
+                            <td><%= item.cache_the_price %></td>
+                            <td><%= item.cache_the_tax %></td>
+                            <td><%= item.cache_the_sub_total %></td>
+                        </tr>
+                    <% end %>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2" class="text-right"><%= t('.total_excl', default: 'Total (excluding Tax)') %> </td>
+                        <td><%= order.cache_the_sub_total %></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2" class="text-right"><%= t('.tax', default: 'Tax') %></td>
+                        <td id="tax_total"><%= order.cache_the_tax %></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2" class="text-right"><%= t('.discount', default: 'Discount') %></td>
+                        <td><%= order.cache_the_discounts %></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2" class="text-right"><%= t('.total_shipping', default: 'Total shipping gift') %></td>
+                        <td><%= order.cache_the_shipping %></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2" class="text-right"><%= t('.total_price', default: 'Total Price') %></td>
+                        <td><%= order.cache_the_total %></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <th><%= t('.payment_type', default: 'Type Payment') %></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><%= order.payment_method.name rescue 'Not Payment' %></td>
+                    <td><%= raw order.the_status %></td>
+                </tr>
+                <% if defined?(as_partial) %>
+                    <tr>
+                        <td>
+                            <%= raw (order.get_meta('payment_data') || {}).map { |k, v| "<b>#{k.to_s.titleize}</b>: #{v}" }.join('<br>') %>
+                        </td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <th><%= t('.shipping_method', default: 'Shipping Gift Method') %></th>
+                    <th><%= t('.date_shipped', default: 'Shipped Date Souvenir') %></th>
+                    <th><%= t('.track_url', default: 'URL Tracking') %></th>
+                </tr>
+                <tr>
+                    <td><%= order.the_shipping_method || t('.no_shipping', default: 'Not Shipped Gift Souvenir Assigned') %></td>
+                    <td><%= order.shipped_at.presence || t('.no_shipped', default: 'Not Shipped Gift Souvenir') %></td>
+                    <td><%= order.the_url_tracking %></td>
+                </tr>
+                </tbody>
+            </table>
+
+<hr>
+<br><br><br>
+<div>
+    <img src="https://saigonyo.com/media/1/logo-w.png" style="position: absolute; width: 50px; height: 50px; top: 87%; left: 48%;">
+<table class="qr-code" style="background-color: #816263; width: 120px; height: 150px;" align="center">
+      <% order.product_items.decorate.each do |item| %>
+       <% @char =  " INVOICE:"  + order.invoice_number + ", BOOKING ID:" + order.slug + ", TOTAL:" + order.cache_the_total +  "."  %>
+       <% @the_url="https://www.saigonyo.com/admin/plugins/ecommerce/orders/#{order.slug}" %>
+    <% @qr = RQRCode::QRCode.new(@the_url, size: 8) %>
+
+   
+    <%end%>
+    
+    <% @qr.modules.each_index do |x| %>
+  <tr>
+
+  <% @qr.modules.each_index do |y| %>
+   <% if @qr.dark?(x,y) %>
+    <td id="hello" style="background-color: black;border-radius: 40px"/>
+   <% else %>
+    <td style="background-color: #FFF; border-radius: 40px;"/>
+   <% end %>
+  <% end %>
+  </tr>
+<% end %>
+</table>
+</div>

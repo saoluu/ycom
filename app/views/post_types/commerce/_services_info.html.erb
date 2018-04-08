@@ -1,0 +1,250 @@
+
+
+<h4><span id="product_price"><%= product.the_price %></span> <span class="pull-right">
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-default-seedates" data-toggle="modal" data-target="#myModal">
+<i class="fa fa-calendar"></i> <%= t('plugins.ecommerce.single.add_to_cart', default: 'Booking Dates') %></button>
+</span>
+
+
+<span>
+    
+      <div id="hearts" class="starrr" data-rating="<%= product.the_field("star-rating-ok") %>"><span class="glyphicon .glyphicon-heart-empty glyphicon-heart"></span></div>    
+
+
+</span>
+
+
+</h4>
+
+<!-- calendar for published at -->
+<hr/>
+            <div class="social-icons">
+                <ul>
+                    <li><a class="facebook1" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="twitter1" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="googleplus1" href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a class="googleplus1" href="#"><i class="fa fa-envelope-o"></i></a></li>
+
+                </ul>
+
+            </div><span class="pull-right"><a  href="#">Save to Wish List <i  class="fa fa-heart-o"></i></a></span>
+
+            
+<br/>
+            <div class="social-icons">
+                <a  href="<%= plugins_ecommerce_checkout_path %>"><h4>Your Booking:</h4></a>
+
+            </div>
+
+            <span class="pull-right">
+
+                    <a href="<%= plugins_ecommerce_checkout_path %>">
+                        <h4><span class=""> <%= e_current_cart.the_price  %> </span> (<span><%= e_current_cart.items_total %></span>)</h4>
+                    </a>
+
+            </span>
+
+
+<%= form_tag(plugins_ecommerce_checkout_cart_add_path, :method => "post", :class => "form", id: 'booking-form') do %>
+    <% if product.is_variation_product? %>
+        <div class="form-group">
+            <%= label_tag :variation_id %>
+            <select class="form-control required" name="variation_id" id="product_variation_id">
+                <% product.product_variations.each_with_index do |variation, index| %>
+                    <option data-sku="<%= variation.sku %>" <%= 'selected' if params[:variation_id].to_s == variation.id.to_s %> <%= 'data-disabled="true"' if !product.in_stock?(variation.id) %> data-price="<%= product.the_price(variation.id) %>" value="<%= variation.id %>"><%= product.the_variation_title(variation.id) %></option>
+                <% end %>
+            </select>
+        </div>
+        <script>
+            jQuery(function(){
+                var panel = $('#product_view');
+                panel.find('#product_variation_id').change(function(){
+                    var op = $(this).find('option:selected');
+                    panel.find('#product_sku').html(op.attr('data-sku'));
+                    panel.find('#product_price').html(op.attr('data-price'));
+                    panel.find('#e_add_to_cart_field_group input, button').prop('disabled', !!op.attr('data-disabled'))
+                    panel.find('#ecommerce-product-slider .carousel-indicators li:eq('+$(this).children().index(op)+')').click();
+                }).trigger('change');
+            });
+
+
+        </script>
+    <% end %>
+    <% if product.in_stock? %>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">  When do you start ?</h2>
+      </div>
+      <div class="modal-body" id="e_add_to_cart_field_group">
+            <%= hidden_field :cart, :qty, class: 'form-control', value: 1, min: 0 %>
+            <%= hidden_field :cart, :product_id, value: product.id %>
+            <%= hidden_field :cart, :booking_date, id: 'booking-date-input' %>
+            <% @post.get_fields('start-date').each do |date|%>
+                <h3><%= product.the_title %></h3>
+              <h4><p id="stage">Booking Date: <%=date.to_time.strftime('%A, %d %b %Y %l:%M %p')%>  </p>
+              
+            <span class="pull-right"><button id="btn-default-ok" data-booking-date='<%= date %>' class="btn btn-default btn-submit" type="button" ><i class="fa fa-share-alt"></i> <%= t('plugins.ecommerce.single.add_to_cart', default: 'Book Service') %></button></span>
+
+              </h4><hr>
+            <%end%>
+
+
+      
+    </div><div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+        
+      <script type="text/javascript" language="javascript">
+         $(document).ready(function() {
+
+          $('#booking-form .btn-submit').on('click', function(){
+            var bookingDate = $(this).data('bookingDate');
+            var $form = $(this).closest('form');
+            $form.find('#booking-date-input').val(bookingDate);
+            $form.submit();
+          });
+
+          
+          // $(button).click(function(event){
+          //    $('#e_add_to_cart_field_group').load('plugins/ecommerce/checkout/cart_index.html.erb #okokok');
+          // });
+         });
+      </script>
+    <% else %>
+        <p><%= t('plugins.ecommerce.single.noavailable_items', default: 'Sold Out') %></p>
+    <% end %>
+<% end %>
+
+    <style type="text/css">
+    #hearts { color: #FF0000; padding-right: 50px; }
+#hearts-existing { color: #87bad7;}
+    </style>
+
+
+
+
+
+    <script type="text/javascript">
+    // Starrr plugin (https://github.com/dobtco/starrr)
+var __slice = [].slice;
+
+(function($, window) {
+  var Starrr;
+
+  Starrr = (function() {
+    Starrr.prototype.defaults = {
+      rating: void 0,
+      numStars: 5,
+      change: function(e, value) {}
+    };
+
+    function Starrr($el, options) {
+      var i, _, _ref,
+        _this = this;
+
+      this.options = $.extend({}, this.defaults, options);
+      this.$el = $el;
+      _ref = this.defaults;
+      for (i in _ref) {
+        _ = _ref[i];
+        if (this.$el.data(i) != null) {
+          this.options[i] = this.$el.data(i);
+        }
+      }
+      this.createStars();
+      this.syncRating();
+      this.$el.on('mouseover.starrr', 'span', function(e) {
+        return _this.syncRating(_this.$el.find('span').index(e.currentTarget) + 1);
+      });
+      this.$el.on('mouseout.starrr', function() {
+        return _this.syncRating();
+      });
+      this.$el.on('click.starrr', 'span', function(e) {
+        return _this.setRating(_this.$el.find('span').index(e.currentTarget) + 1);
+      });
+      this.$el.on('starrr:change', this.options.change);
+    }
+
+    Starrr.prototype.createStars = function() {
+      var _i, _ref, _results;
+
+      _results = [];
+      for (_i = 1, _ref = this.options.numStars; 1 <= _ref ? _i <= _ref : _i >= _ref; 1 <= _ref ? _i++ : _i--) {
+        _results.push(this.$el.append("<span class='glyphicon .glyphicon-heart-empty'></span>"));
+      }
+      return _results;
+    };
+
+    Starrr.prototype.setRating = function(rating) {
+      if (this.options.rating === rating) {
+        rating = void 0;
+      }
+      this.options.rating = rating;
+      this.syncRating();
+      return this.$el.trigger('starrr:change', rating);
+    };
+
+    Starrr.prototype.syncRating = function(rating) {
+      var i, _i, _j, _ref;
+
+      rating || (rating = this.options.rating);
+      if (rating) {
+        for (i = _i = 0, _ref = rating - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
+          this.$el.find('span').eq(i).removeClass('glyphicon-heart-empty').addClass('glyphicon-heart');
+        }
+      }
+      if (rating && rating < 5) {
+        for (i = _j = rating; rating <= 4 ? _j <= 4 : _j >= 4; i = rating <= 4 ? ++_j : --_j) {
+          this.$el.find('span').eq(i).removeClass('glyphicon-heart').addClass('glyphicon-heart-empty');
+        }
+      }
+      if (!rating) {
+        return this.$el.find('span').removeClass('glyphicon-heart').addClass('glyphicon-heart-empty');
+      }
+    };
+
+    return Starrr;
+
+  })();
+  return $.fn.extend({
+    starrr: function() {
+      var args, option;
+
+      option = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+      return this.each(function() {
+        var data;
+
+        data = $(this).data('star-rating');
+        if (!data) {
+          $(this).data('star-rating', (data = new Starrr($(this), option)));
+        }
+        if (typeof option === 'string') {
+          return data[option].apply(data, args);
+        }
+      });
+    }
+  });
+})(window.jQuery, window);
+
+$(function() {
+  return $(".starrr").starrr();
+});
+
+$( document ).ready(function() {
+      
+  $('#hearts').on('starrr:change', function(e, value){
+    $('#count').html(value);
+  });
+  
+  $('#hearts-existing').on('starrr:change', function(e, value){
+    $('#count-existing').html(value);
+  });
+});
+    </script>

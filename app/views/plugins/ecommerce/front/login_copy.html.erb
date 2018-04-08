@@ -1,0 +1,74 @@
+<div class="container" id="ecommerce_login_panel">
+    <%= render 'post_types/commerce/cart_widget' %>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#login-form" role="tab" data-toggle="tab"><%= t('.login', default: 'Login') %></a></li>
+                <li role="presentation"><a href="#register-form" role="tab" data-toggle="tab"><%= t('.register', default: 'Register') %></a></li>
+            </ul>
+            <div class="tab-content">
+                <%= form_tag plugins_ecommerce_login_path, id: 'login-form', class: 'tab-pane active', role: 'tabpanel' do %>
+                    <%= hidden_field_tag :kind_form, 'login-form' %>
+                    <div class="form-group">
+                        <input type="text" name="email" tabindex="1" class="form-control required" placeholder="<%= t('.email', default: 'Email') %>" value="<%= params[:email] %>">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" tabindex="2" class="form-control required" placeholder="<%= t('.password', default: 'Password') %>">
+                    </div>
+                    <div class="form-group">
+                        <%= button_tag t('.login', default: 'Login'), class: 'btn btn-default col-md-3', type: 'submit' %>
+                        <a href="<%= cama_admin_forgot_url(return_to: site_current_url) %>" tabindex="5" class="pull-right"><%= t('.forgot', default: 'Forgot Password?') %></a>
+                    </div>
+                    <div class="clearfix"></div>
+                <% end %>
+
+                <%= form_for @user, url: plugins_ecommerce_register_path, html: { id: 'register-form', class: 'tab-pane', role: 'tabpanel' } do |f| %>
+                    <%= render partial: 'layouts/camaleon_cms/admin/form_error', locals: {data: @user} %>
+                    <%= hidden_field_tag :kind_form, 'register-form' %>
+                    <div class="form-group">
+                        <%= f.text_field :first_name, class: 'form-control required', tabindex: 1, placeholder: t('.full_name', default: 'Full Name') %>
+                    </div>
+                    <div class="form-group">
+                        <%= f.text_field :email, class: 'form-control email required', tabindex: 3, placeholder: t('.email', default: 'Email address') %>
+                    </div>
+                    <div class="form-group">
+                        <%= f.password_field :password, class: 'form-control required', tabindex: 4, placeholder: t('.password', default: 'Password') %>
+                    </div>
+                    <div class="form-group">
+                        <%= f.password_field :password_confirmation, class: 'form-control required', equalTo: '#camaleon_cms_user_password', tabindex: 5, placeholder: t('.confirm_pass', default: 'Confirm Password') %>
+                    </div>
+                    <div class="form-group">
+                        <%= submit_tag t('.create_account', default: 'Create account'), class: 'btn btn-default col-md-3' %>
+                    </div>
+                    <div class="clearfix"></div>
+                <% end %>
+                <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+  $(function() {
+    var panel = $('#ecommerce_login_panel');
+    <% if params[:kind_form].present? %>
+      $('#<%= params[:kind_form] %>-link', panel).click();
+    <% end %>
+
+    function do_validation(){
+      $("#register-form", panel).validate();
+      $("#login-form", panel).validate();
+    }
+
+    if(!$.fn.validator) $.getScript('<%= asset_url('camaleon_cms/admin/jquery.validate') %>', function(){ do_validation(); });
+    else do_validation();
+  });
+</script>
+
+
+
+
+
+
+
+
+

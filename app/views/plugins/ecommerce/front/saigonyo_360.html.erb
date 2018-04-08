@@ -1,0 +1,625 @@
+
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+
+  <style>
+
+  .jumbotron {
+      background-color: #816263;
+      background-image: url("https://saigonyo.vn/media/1/sai-gon-7.jpg") ;
+      width: 100%;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: "Work Sans", WorkSans-Regular;
+
+
+  }
+
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+
+  .logo-small {
+      color: #816263;
+     font-size: 50px!important;
+  }
+  .logo {
+      color: #816263;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #816263;
+  }
+  .carousel-indicators li {
+      border-color: #816263;
+  }
+  .carousel-indicators li.active {
+      background-color: #816263;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #816263; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #816263;
+      background-color: #fff !important;
+      color: #816263;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #816263 !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+
+
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  /* The only rule that matters */
+#video-background {
+/*  making the video fullscreen  */
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+/* These just style the content */
+article {
+/*  just a fancy border  */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  margin: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+/*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
+  background: #333;
+  background-attachment: fixed;
+  background-size: cover;
+}
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  </style>
+
+<body>
+<div class="">
+<!--  Content  -->
+
+<!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
+<video autoplay loop id="video-background" muted plays-inline>
+  <source src="https://saigonyo.com/media/1/saigonyo-luot-song.mp4" type="video/mp4">
+</video>
+</div>
+
+
+
+  <div class="container">
+
+      <!-- THE YOUTUBE PLAYER -->
+      <div class="vid-container">
+        <iframe id="vid_frame" src="https://www.youtube.com/embed/MKWWhf8RAV8?list=PLEvfHY3qhzGr8P1zgfQqvEYJ0U-Ajh_hZ?autoplay=1&amp;rel=0&amp;showinfo=0&amp;autohide=1" frameborder="0" width="50%" height="30%"></iframe>
+    </div>
+
+    <!-- THE PLAYLIST -->
+    <div class="vid-list-container">
+          <div class="vid-list">
+            
+              <div class="vid-item" onclick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/H1iR7BeRa5U?autoplay=1&amp;rel=0&amp;showinfo=0&amp;autohide=1'">
+                <div class="thumb"><img src="https://i1.ytimg.com/vi/H1iR7BeRa5U/default.jpg"></div>
+                <div class="desc">Burj Khalifa Base Jump 360°</div>
+              </div>
+            
+              <div class="vid-item" onclick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/KS9S1Hgx2co?autoplay=1&amp;rel=0&amp;showinfo=0&amp;autohide=1'">
+                <div class="thumb"><img src="https://i1.ytimg.com/vi/KS9S1Hgx2co/default.jpg"></div>
+                <div class="desc">KITZ 360</div>
+              </div>
+
+              <div class="vid-item" onclick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/cud-m7DbT6w?autoplay=1&amp;rel=0&amp;showinfo=0&amp;autohide=1'">
+                <div class="thumb"><img src="https://i1.ytimg.com/vi/cud-m7DbT6w/default.jpg"></div>
+                <div class="desc">Virtual 360˚ tour of the 2016 Honda NHL All-Star Game</div>
+              </div>
+
+              <div class="vid-item" onclick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/k3nmi8b_AyA?autoplay=1&amp;rel=0&amp;showinfo=0&amp;autohide=1'">
+                <div class="thumb"><img src="https://i1.ytimg.com/vi/k3nmi8b_AyA/default.jpg"></div>
+                <div class="desc">Skiing in Portillo, Chile with Chris Davenport and Julia Mancuso</div>
+              </div>
+
+              <div class="vid-item" onclick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/uwHQEpmRjhw?autoplay=1&amp;rel=0&amp;showinfo=0&amp;autohide=1'">
+                <div class="thumb"><img src="https://i1.ytimg.com/vi/uwHQEpmRjhw/default.jpg"></div>
+                <div class="desc">Sand Dune Jumping with Ronnie Renner</div>
+              </div>
+
+              <div class="vid-item" onclick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/ebICMhOtipg?autoplay=1&amp;rel=0&amp;showinfo=0&amp;autohide=1'">
+                <div class="thumb"><img src="https://i1.ytimg.com/vi/ebICMhOtipg/default.jpg"></div>
+                <div class="desc">360° View - England 1-2 Netherlands at Wembley Stadium</div>
+              </div>
+            
+              <div class="vid-item" onclick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/t99N223fqCo?autoplay=1&amp;rel=0&amp;showinfo=0&amp;autohide=1'">
+                <div class="thumb"><img src="https://i1.ytimg.com/vi/t99N223fqCo/default.jpg"></div>
+                <div class="desc">Wingsuit 360° Experience</div>
+              </div>
+
+              <div class="vid-item" onclick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/INUry8qcRtI?autoplay=1&amp;rel=0&amp;showinfo=0&amp;autohide=1'">
+                <div class="thumb"><img src="https://i1.ytimg.com/vi/INUry8qcRtI/default.jpg"></div>
+                <div class="desc">XFINITY | 360° NASCAR Virtual Reality Experience</div>
+              </div>
+              <div class="vid-item" onclick="document.getElementById('vid_frame').src='https://www.youtube.com/embed/pMBDA-Our4w?autoplay=1&amp;rel=0&amp;showinfo=0&amp;autohide=1'">
+                <div class="thumb"><img src="https://i1.ytimg.com/vi/pMBDA-Our4w/default.jpg"></div>
+                <div class="desc">GoPro VR: Land, Air and Sea</div>
+              </div>
+
+
+        </div>
+        </div>
+
+        <!-- LEFT AND RIGHT ARROWS -->
+        <div class="arrows">
+          <div class="arrow-left"><i class="fa fa-chevron-left fa-lg"></i></div>
+          <div class="arrow-right"><i class="fa fa-chevron-right fa-lg"></i></div>
+        </div>
+
+    </div>
+
+    <div class="caption"><a href="http://www.woosterwebdesign.com/responsive-youtube-player-with-playlist/">Related Blog Post</a></div>
+
+    <div class="caption">
+      <strong><a href="http://woosterwebdesign.com/mylist-video-player">Check out the MyList Video Player.</a></strong>
+    <p>A fully responsive HTML5 video player featuring a scrolling thumbnail playlist. Uses latest YouTube API (V3) and dynamically loads YouTube playlist.</p>
+    </div>
+
+
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Let Saigonyo explore beyond the limits of time space, bring the opportunity to experience the culture, tourism, the art of Vietnamese people in a different way.</h2><br>
+  <h3>Share experience the world in 360 degrees with the great spacetime we capture.</h3>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        
+<iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1508945408320!6m8!1m7!1sCAoSLEFGMVFpcE1hTGZDVUFRZEJKa0Rib2ZrRm9KNEdBbzRJR3J5dm02VlRNcWli!2m2!1d20.8569336!2d107.2688599!3f316!4f0!5f0.7820865974627469" width="100%" height="330" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <p><strong></strong></p>
+        <p>World experience 360</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1508944591114!6m8!1m7!1sCAoSLEFGMVFpcE5aM01MdnBEV0stOHYyZFcxeHIwelY5aVlXMUVxUjZoNkRKc0tO!2m2!1d40.691143!2d-74.04528049999999!3f195.8456593016149!4f2.106739062964877!5f0.7820865974627469" width="100%" height="330" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        <p>World experience 360</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1508944393580!6m8!1m7!1sF%3A-0h6M-58-k_s%2FVA7H35ZYRGI%2FAAAAAAAAHoo%2FGmf9WbbD_TY_jBo-daqKrPlFonTIy-h0wCLIB!2m2!1d48.8582233!2d2.29449!3f314.72!4f6.519999999999996!5f0.7820865974627469" width="100%" height="330" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        <p>World experience 360</p>
+      </div>
+    </div>
+      <div class="col-sm-4">
+      <div class="thumbnail">
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1508943734011!6m8!1m7!1sCAoSLEFGMVFpcE1OMV9oTVFlQmROTVdvSnlaeXM3RUFRUUhPOGtsSDNDLXJXbTdl!2m2!1d10.80935035448861!2d106.7325249856744!3f120.55471329681907!4f-17.418144408454566!5f0.7820865974627469" width="100%" height="330" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <p>World experience 360</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1508944120710!6m8!1m7!1sCAoSLEFGMVFpcE5vVUF1MV9qaFN3QkpmTzgwRzJRUlRiTDVaV015MmJZcVdFNEg0!2m2!1d10.8156953!2d106.7341801!3f73.39244364862368!4f-13.738181654921505!5f0.7820865974627469" width="100%" height="330" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <p>World experience 360</p>
+      </div>
+    </div>
+
+
+    <div class="col-sm-4">
+      <div class="thumbnail">
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1508944230370!6m8!1m7!1sCAoSLEFGMVFpcE1iVFpqT3F3cjFPV0hPM01TVk1BSlJxeW94a2NORDZkbDlSR0hk!2m2!1d10.8077761!2d106.7403266!3f198.8521907843957!4f6.22620250773295!5f0.7820865974627469" width="100%" height="330" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <p>World experience 360</p>
+      </div>
+    </div>
+      <div class="col-sm-4">
+      <div class="thumbnail">
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1508944287630!6m8!1m7!1sCAoSLEFGMVFpcFBOVGJjR2RxSTU2MS1KZnlqSWxKS2czMTZyZHJKTm9VTjBKbm9a!2m2!1d10.8074206!2d106.7456988!3f188.5594924799796!4f6.286216479429569!5f0.7820865974627469" width="100%" height="330" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <p>World experience 360</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1508945838248!6m8!1m7!1sCAoSLEFGMVFpcFA2Sm1nLVNleUJjLVNUVEdhZ0NFYXVRZFZQMm5uVS1HbVJOM1Iy!2m2!1d10.7797353!2d106.6996848!3f48.01643907408166!4f15.102543881092828!5f0.7820865974627469" width="100%" height="330" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        <p>World experience 360</p>
+      </div>
+    </div>
+
+
+
+    <div class="col-sm-4">
+      <div class="thumbnail">
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1508945920814!6m8!1m7!1sCAoSLEFGMVFpcE00aDkzSFA2LTc5Mmd0UlljX0g1NXVRZkZ6MUR2ZGJGZmU5SEJh!2m2!1d21.028017!2d105.8524628!3f352.35986293162944!4f0.14613809043852655!5f0.7820865974627469" width="100%" height="330" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <p>World experience 360</p>
+      </div>
+    </div>
+
+
+  </div><br>
+  
+  <h2>What does the 360 experience mean ?</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"Experience 360 degrees"<br><span>Share experience the world in 360 degrees with the great spacetime we capture.</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Recreate cultural history"<br><span>Using virtual reality technology to re-create 3D space for landscapes, buildings, historical architecture for people to experience cultural history.
+        </span></h4>
+      </div>
+      <div class="item">
+        <h4>"Travel experience online"<br><span> It helps travelers to find out in advance where they are going to visit the places they want to visit.</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Wonder of the world"<br><span>Help people admire masterpieces in the real world, but you do not have the opportunity to see, or it does not exist anymore.</span></h4>
+
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+    <!-- JS FOR SCROLLING THE ROW OF THUMBNAILS YOUTUBE -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".arrow-right").bind("click", function (event) {
+            event.preventDefault();
+            $(".vid-list-container").stop().animate({
+                scrollLeft: "+=336"
+            }, 750);
+        });
+        $(".arrow-left").bind("click", function (event) {
+            event.preventDefault();
+            $(".vid-list-container").stop().animate({
+                scrollLeft: "-=336"
+            }, 750);
+        });
+    });
+    </script>
+
+
+<style>
+.mediaContainer_jl5led {
+    position: absolute !important;
+    top: 0px !important;
+    bottom: 0px !important;
+    left: 0px !important;
+    right: 0px !important;
+    overflow: hidden !important;
+    height: 100% !important;
+}
+
+
+.video_vtz4ro {
+    width: 100% !important;
+    position: relative !important;
+    top: 50% !important;
+    -webkit-transform: translateY(-50%) !important;
+    -ms-transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important;
+}
+
+audio, canvas, video {
+    display: inline-block;
+}
+
+
+video {
+    object-fit: contain;
+}
+
+
+#videoPlayer {
+    float:left;
+    width:100%;
+    height:100%;
+    margin:10px;    
+    border:1px solid silver;
+}
+</style>
+
+<style>
+
+
+
+      /*  VIDEO PLAYER CONTAINER
+    ############################### */
+      .vid-container {
+        position: relative;
+        padding-bottom: 52%;
+        padding-top: 30px; 
+        height: 0; 
+    }
+     
+    .vid-container iframe,
+    .vid-container object,
+    .vid-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /*  VIDEOS PLAYLIST 
+    ############################### */
+    .vid-list-container {
+      width: 92%;
+      overflow: hidden;
+      margin-top: 20px;
+      margin-left:4%;
+      padding-bottom: 20px;
+    }
+
+    .vid-list {
+      width: 1344px;
+      position: relative;
+      top:0;
+      left: 0;
+    }
+
+    .vid-item {
+      display: block;
+      width: 148px;
+      height: 148px;
+      float: left;
+      margin: 0;
+      padding: 10px;
+    }
+
+    .thumb {
+      /*position: relative;*/
+      overflow:hidden;
+      height: 84px;
+    }
+
+    .thumb img {
+      width: 100%;
+      position: relative;
+      top: -13px;
+    }
+
+    .vid-item .desc {
+      color: #21A1D2;
+      font-size: 15px;
+      margin-top:5px;
+    }
+
+    .vid-item:hover {
+      background: #eee;
+      cursor: pointer;
+    }
+
+    .arrows {
+      position:relative;
+      width: 100%;
+    }
+
+    .arrow-left {
+      color: #fff;
+      position: absolute;
+      background: #777;
+      padding: 15px;
+      left: -25px;
+      top: -130px;
+      z-index: 99;
+      cursor: pointer;
+    }
+
+    .arrow-right {
+      color: #fff;
+      position: absolute;
+      background: #777;
+      padding: 15px;
+      right: -25px;
+      top: -130px;
+      z-index:100;
+      cursor: pointer;
+    }
+
+    .arrow-left:hover {
+      background: #CC181E;
+    }
+
+    .arrow-right:hover {
+      background: #CC181E;
+    }
+
+
+    @media (max-width: 624px) {
+      body {
+        margin: 15px;
+      }
+      .caption {
+        margin-top: 40px;
+      }
+      .vid-list-container {
+        padding-bottom: 20px;
+      }
+
+      /* reposition left/right arrows */
+      .arrows {
+        position:relative;
+        margin: 0 auto;
+        width:96px;
+      }
+      .arrow-left {
+        left: 0;
+        top: -17px;
+      }
+
+      .arrow-right {
+        right: 0;
+        top: -17px;
+      }
+    }
+
+    
+
+</style>
+
+<script type="text/javascript">
+  
+
+  var nextVideo = ["http://www.w3schools.com/html/movie.mp4","http://www.w3schools.com/html/mov_bbb.mp4","http://www.w3schools.com/html/movie.mp4"];
+var curVideo = 0;
+var videoPlayer = document.getElementById('videoPlayer');
+videoPlayer.onended = function(){
+    ++curVideo;
+    if(curVideo < nextVideo.length){        
+        videoPlayer.src = nextVideo[curVideo];        
+    } 
+}
+</script>
+
+</body>

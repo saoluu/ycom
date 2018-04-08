@@ -1,0 +1,538 @@
+es:
+  plugins:
+    ecommerce:
+      accepted: "Aceptado"
+      active: "Activo"
+      add_shipping_methods: "Agregar Método de Envío"
+      not_active: "No Activo"
+      coupons: "Cupones"
+      e_commerce: "Comercio Electrónico"
+      e_commerce_settings: "Ajustes Comercio Electrónico"
+      e_mail_address: "Dirección Correo Electrónico"
+      edit_tax_rate: "Editar Tasa de Impuesto"
+      edit_shipping_methods: "Editar Método de Envío"
+      edit_price: "Editar Precio"
+      edit_payment_methods: "Editar Método de Pago"
+      edit_coupon: "Editar Cupón"
+      edit_order: "Editar Pedido"
+      all_products: "Todos los Productos"
+      product_attributes: 'Atributos de Productos'
+      add_new: "Agregar Nuevo"
+      add_tax_rate: "Agregar Tasa de Impuesto"
+      add_price: "Agregar Precio"
+      add_coupons: "Agregar Cupones"
+      add_payment_method: "Agregar Método de Pago"
+      billing_address: "Dirección de facturación"
+      by_bank_transfer: "Por Transferencia Bancaria"
+      by_paypal: "Por Paypal"
+      by_credit_card: "Tarjeta Crédito (PayPal)"
+      by_authorize_net: "Tarjeta Crédito (Authorize.net)"
+      by_on_delivery: 'Pago Contra Entrega'
+      advanced_search: 'Búsqueda Avanzada'
+      details_shipping_methods: "Detalle Método de Envío"
+      details_payment_methods: "Detalle Método de Pago"
+      details_order: "Detalle Pedido"
+      order_destroyed: 'Orden Eliminado'
+      order_no_destroyed: 'La orden no pudo ser eliminado '
+      details_user: "Detalle Usuario"
+      form_tax_rate: "Formulario Tasa de Impuesto"
+      form_shipping_methods: "Formulario Método de Envío"
+      form_price: "Formulario Precio"
+      form_payment_methods: "Formulario Método de Pago"
+      form_coupon: "Formulario Cupón"
+      form_settings: "Formulario Ajustes"
+      orders: "Pedidos"
+      order_received: "Pedido Recibido"
+      order_accepted: "Pedido Aceptado"
+      order_shipped: "Solicitar Envio"
+      payment_methods: "Métodos de Pago"
+      info: "Información"
+      list_orders: "Lista de Pedidos"
+      list_tax_rate: "Lista Tasas de Impuestos"
+      list_shipping_methods: "Lista Métodos de Envío "
+      list_price: "Lista de Precio"
+      list_payment_methods: "Lista Métodos de Pago"
+      list_coupons: "Lista Cupones"
+      mark_Shipped: "Marcar como enviado"
+      variations:
+        not_deletable_product_variations: 'Algunos variaciones de producto no pueden ser eliminados'
+      message:
+        consignment_number: "Use {{numero_envio}} para insertar el no."
+        error_paypal_values: "Error Valores Paypal"
+        not_shipped: "No Enviado"
+        not_shipped_assigned: "Envío no asignado"
+        order: "Pedido %{status}"
+        accepted: "Aceptado"
+        shipped: "Enviado"
+        updated: "Actualizado"
+        order_bank_confirmed: 'Pago Bancario Confirmado'
+        order_on_delivery_confirmed: 'Pago Contra Entrega Confirmado'
+        order_accepted: 'Orden aceptado'
+        order_shipped: 'Orden enviado'
+        order_canceled: 'Orden cancelado'
+        order_email_resent: 'Correo Re-Enviado'
+        order_updated: 'Orden actualizado'
+        not_deletable_product_variations: 'Algunas variaciones de producto no pueden ser eliminados.'
+        not_deletable_product: 'El Producto no puede ser eliminado porque existen órdenes referenciadas.'
+
+      method_paypal: "Método por Paypal"
+      method_credit_card: "Método por Tarjeta de Credito"
+      method_bank_transfer: "Método Transferencia Bancaria"
+      method_shipped: "Método de Envío"
+      method_authorize_net: "Método por Authorize.net"
+      new: "Nuevo"
+      new_tax_rate: "Nueva Tasa de Impuesto"
+      new_shipping_methods: "Nuevo Método de Envío"
+      new_price: "Nuevo Precio"
+      new_payment_methods: "Nuevo Método de Pago"
+      new_coupon: "Nuevo Cupón"
+      options_payment_methods: "Opciones de Pago"
+      payments: "Pagos"
+      phone_number: "Número Telefónico"
+      product:
+        featured: "Destacado"
+        item: "Artículo"
+        price: "Precio"
+        photo: "Fotos del producto"
+        box: "Que contiene la caja"
+        sku: "SKU"
+        attrs: "Atributos"
+        photos: "Fotos"
+        cost: "Costo"
+        tax: "Tasa de impuesto"
+        weight: "Peso"
+        stock_tatus: "Cantidad de Productos"
+        stock: "Control de Cantidad de Productos?"
+        qty: "Cantidad"
+        files: 'Archivos del producto'
+        in_stock: "Disponible"
+        not_in_tock: "No Disponible"
+        total_excluding_tax: "Total (impuestos excluidos)"
+        attrs_descr: "Ingresa los atributos de tu producto separados por comas, ejemplo: Color ==> Rojo, Azul, Verde"
+        image_label: "Foto de Producto"
+        stock_status: "Estado del stock"
+        current_unit: "Tipo de unidad: %{unit}"
+        current_weight: "Unidad de Medida: %{weight}"
+      products: "Productos"
+      shipping_address: "Dirección de Envío"
+      shipping_methods: "Métodos de Envío"
+      shipped_date: "Fecha de Envío"
+      search_order_number: "Buscar número de pedido"
+      select:
+        received: 'Recibido'
+        unpaid: 'No Pagado'
+        paid: 'Pagado'
+        accepted: 'Aceptado'
+        shipped: 'Enviado'
+        closed: 'Cerrado'
+        canceled: 'Cancelado'
+        pending: 'Pendiente'
+        kilogram: "Kilogramo"
+        pound: "Libra"
+        dram: "Dracma"
+        grain: "Grano"
+        gram: "Gramo"
+        hundredweight: "Quintal"
+        milligram: "Miligramo"
+        ounce: "Onza"
+        tonne: "Tonelada"
+      table:
+        address: "Dirección"
+        actions: "Acciones"
+        amount: "Cantidad"
+        allowed_applications: "Aplicaciones permitidas"
+        city: "Ciudad"
+        code: "CÓDIGO"
+        country: "País"
+        currency_unit: "Unidad de Moneda"
+        system_currency_unit: 'Unidad de Moneda Administrador'
+        available_currencies_unit: 'Unidades de Moneda para Visitantes'
+        shipping_countries: 'Paises Para Envío'
+        currency_weight: "Unidad de Peso"
+        customer: "Cliente"
+        customer_info: "Información del cliente"
+        description: "Descripción"
+        details: "Detalle"
+        discount: "Descuento"
+        discount_type: "Tipo de Descuento"
+        email: "Correo Electrónico"
+        expiration_date: "Fecha de expiración"
+        expired: "Expirado"
+        firstname: "Nombre"
+        id: "ID"
+        lastname: "Apellido"
+        login: "Inicio Sesión"
+        login_id: "Identificar de inicio"
+        max_weight: "Peso Máximo"
+        min_weight: "Peso Mínimo"
+        min_cart_total: "Compra total mínima"
+        method: "Método"
+        name: "Nombre"
+        not_paid: "No pagado"
+        number_account_bank: "Número Cuenta Bancaria"
+        password: "Contraseña"
+        paid: "A cargo?"
+        make_accepted: 'Marcar como aceptado'
+        make_shipped: 'Marcar como enviado'
+        make_canceled: 'Marcar como cancelado'
+        make_bank_confirmed: 'Marcar como Pagado'
+        confirm_mark_as_paid: 'Esta seguro de marcar como pagado?'
+        confirm_delete: 'Esta seguro de eliminar esta orden?'
+        payment_method: "Forma de Pago"
+        percent: "Porcentaje"
+        money: "Dinero"
+        free_shipping: "Envío Gratis"
+        phone: "Teléfono"
+        products: "Productos"
+        rate: "Tarifa"
+        received_time: "Tiempo Recibido"
+        created_at: 'Fecha de Creación'
+        sandbox: "Cuentas de Prueba"
+        shipping: "Envío"
+        signature: "Firma"
+        status: "Estado"
+        slug: "Código"
+        sub_total: "Sub Total"
+        state: "Estado"
+        total: "Total"
+        url_tracking: "URL de seguimiento"
+        username_login: "Nombre Usuario / Inicio Sesión"
+        used_applications: "Aplicaciones Usadas"
+        code_zip: "Código Postal"
+        method_type: "Tipo de metodo"
+        transaction_key: "Clave de transacción"
+      show_order:
+        consignment_number: 'Número de envío'
+
+
+      tax_rates: "Tasas de Impuesto"
+      add_to_cart: "Añadir al carro"
+
+      shipping_prices: "Precios de envío"
+      mark_shipped: "Marcar como enviado"
+      mail:
+        dear: 'Estimado/a %{name}: '
+        order_received:
+          welcome: "Hola"
+          thanks: "Gracias por su compra"
+          reference: "Para su referencia, su número de orden es: "
+          boght_by: 'Compra realizada por %{user}'
+        recovery_cart:
+          body: "Hemos observado que usted a dejado pendiente una compra."
+          reference: "Para su referencia, su número de orden es: "
+        order_confirmed:
+          message: 'Hemos revisado y confirmado su pago por transferencia bancaria de su orden #%{order}. Gracias por su preferencia.'
+          subject: 'Order Confirmed'
+        order_shipped:
+          subject: 'Orden Enviado'
+          message: 'Tu orden %{order} a sido enviado.'
+        order_canceled:
+          subject: 'Orden Cancelado'
+          message: 'Tu orden %{order} a sido cancelado por la siguiente razon: %{message}'
+
+      email:
+        invoice_number_exceeded_subject: 'Número de factura excedido.'
+        invoice_number_exceeded_body: 'El número de factura %{number} fué excedido. Por favor revise las configuraciones de comercio electrónico.'
+        order_received_label: 'Orden Recibido'
+        order_confirmed_label: 'Orden Confirmado'
+        order_bank_confirmed_label: 'Orden Confirmado Por Banco'
+        order_on_delivery_confirmed_label: 'Orden Confirmado Contra Entrega'
+        order_shipped_label: 'Orden Enviado'
+        order_cancelled_label: 'Orden Cancelado'
+
+      admin:
+        settings:
+          index:
+            title: 'Configuración de Comercio Clectrónico'
+            keywords_to_use: 'Palabras Clave para usar'
+            email_settings: 'Email Settings'
+            system_currency_unit: 'Tipo de Moneda para el administrador'
+            currency_weight: 'Unidad de Peso'
+            invoice_number_from: 'Número de Inicio de facturación'
+            invoice_number_to: 'Número Final de facturación'
+            shipping_countries: 'Paises para envío'
+            available_currencies_unit: 'Unidades de Moneda disponibles para visitantes'
+            email_order_received: 'Orden Recibido'
+            email_order_confirmed: 'Orden Confirmado'
+            email_order_shipped: 'Orden Enviado'
+            email_order_cancelled: 'Orden Cancelado'
+            email_order_invoice: 'Formato de Factura'
+            select_all: 'Seleccionar todo'
+            deselect_all: 'Des seleccionar todo'
+
+
+        orders:
+          index:
+            search_field: 'Correo, Código o Cupón'
+            created_after: 'Creado despues de'
+            created_before: 'Creado antes de'
+            search_status: 'Estado'
+            search_user: 'Usuario'
+            resend_email: 'Reenviar Correo'
+
+        product_attributes:
+          group_label: 'Etiqueta de Grupo'
+          label: 'Etiqueta'
+          value: 'Valor'
+          title: 'Atributos de Producto'
+          add_attr_group: 'Agregar nuevo grupo'
+          add_new_value: 'Agregar valor'
+          values: 'Valores'
+          code: 'Código'
+          confirm_delete: 'Esta seguro de eliminar?'
+
+        save_product_attributes:
+          saved_product_attributes: 'Atributos guardados'
+
+        products:
+          variations:
+            title: 'Variaciones de Producto'
+            attributes: 'Atributos'
+            add_new_variation: 'Agregar Variación'
+            add_new_value: 'Agregar nuevo valor'
+            photo: 'Foto'
+            sku: 'SKU'
+            price: 'Precio'
+            weight: 'Peso'
+            qty: 'Cantidad'
+            confirm_del: 'Esta seguro de eliminar esta variación?'
+
+
+  # frontend
+  #plugins:
+  #  ecommerce:
+      messages:
+        cart_no_products: 'No existen productos en su carro'
+        checkout: 'Pago'
+        saved_order: 'Orden guardado'
+        not_enough_product_qty: 'No existen suficientes productos "%{product}" (Disponible %{qty})'
+        missing_variation: 'Variación de producto no válido'
+        added_product_in_cart: 'Producto agregado al carrito'
+        cart_updated: 'Carro de compras actualizado'
+        cart_deleted: 'Producto eliminado de su carro de compras'
+        shopping_cart: 'Carro de compras'
+        invalid_access: 'Acceso no válido'
+        created_account: 'Cuenta creada satisfactoriamente'
+        my_orders: 'Mis Ordenes'
+        order_not_found: 'Orden no encontrado'
+        detail_order: 'Detalles de orden: #%{order}'
+        coupon_not_found: 'Cupón no encontrado'
+        coupon_expired: 'Cupón expirado'
+        inactive_coupon: 'Cupón deshabilitado'
+        canceled_order: 'Orden cancelado'
+        payment_completed: 'Compra realizada satisfactoriamente'
+        processing_order: 'Pago por orden #%{order}'
+        times_exceeded: 'Cantidad de usos excedido'
+        required_minimum_price: 'El monto de tu compra debe ser superior a %{min_amount}'
+        order_status:
+          bank_pending: 'Pendiente de confirmación'
+          on_delivery: 'Pendiente de confirmación'
+          canceled: 'Cancelado'
+          paid: 'Pagado'
+          shipped: 'Enviado'
+          received: 'Recibido'
+          accepted: 'Aceptado'
+
+      single:
+        available_items: 'Items Disponibles'
+        qty: 'Cantidad'
+        add_to_cart: 'Agregar al Carro'
+        descr: 'Descripción'
+        attrs: 'Atributos'
+        sku: 'SKU'
+        noavailable_items: 'No hay items disponibles'
+        no_stock: 'Producto fuera de stock'
+
+      front:
+        breadcrumb:
+          home: 'Inicio'
+        checkout:
+          index:
+            check_out_process: 'Proceso de Pago'
+            step: 'Paso'
+          cart_index:
+            item: 'Item'
+            tax: 'Impuesto'
+            price: 'Precio'
+            subtotal: 'Sub Total'
+            quantity: 'Cantidad'
+            delete: 'Eliminar'
+            update: 'Actualizar'
+            proceed: 'Realizar Compra'
+            title: 'Carro de Compras'
+          cart_update:
+            updated_products: 'Carro de compras actualizado'
+
+        orders:
+          index:
+            title: 'Mis Ordenes'
+            id: 'ID'
+            status: 'Estado'
+            products: 'Productos'
+            total_amount: 'Monto Total'
+            coupon: 'Cupón'
+            paid_amount: 'Monto Pagado'
+            order_date: 'Fecha de Orden'
+            method: 'Método de Pago'
+            view: 'Ver Detalles'
+            buy: 'Comprar'
+
+          show:
+            title: 'Detalles de Orden'
+            customer_info: 'Información de Comprador'
+            name: 'Nombre'
+            email: 'Correo Electrónico'
+            phone: 'Teléfono'
+            billing_address: 'Dirección de factura'
+            address: 'Dirección'
+            details: 'Detalles'
+            shipping_address: 'Dirección de envío'
+            created_at: 'Fecha de Creación'
+            received_at: 'Fecha de Recepción'
+            invoice_number: 'Número de Factura'
+            shipped_at: 'Enviado En'
+            city: 'Ciudad'
+            state: 'Estado'
+            zip_code: 'Código zip'
+            country: 'País'
+            title_products: 'Productos y Pagos'
+            payment_type: 'Tipo de Pago'
+            buy_now: 'Comprar ahora'
+            cancel_order: 'Cancelar Orden'
+            shipping_method: 'Tipo de envío'
+            date_shipped: 'Fecha de Envío'
+            track_url: 'Url de seguimiento'
+            no_shipping: 'Metodo de envío no asignado'
+            no_shipped: 'No enviado'
+            phone_number: 'Número de Teléfono'
+            total: 'Total'
+            qty: 'Cantidad'
+            item: 'Item'
+            price: 'Precio'
+            tax: 'Impuestos'
+            subtotal: 'Sub Total'
+            total_excl: 'Total (excluyendo impuestos)'
+            discount: 'Descuento'
+            total_shipping: 'Total envío'
+            total_price: 'Precio Total'
+
+        login:
+          login: 'Acceder'
+          register: 'Registro'
+          username: 'Nombre de usuario'
+          forgot: 'Olvidó contraseña?'
+          pass: 'Password'
+          email: 'Correo Electrónico'
+          full_name: 'Nombre Completo'
+          confirm_pass: 'Repetir Password'
+          create_account: 'Crear cuenta'
+
+
+      partials:
+        email:
+          billing_address:
+            address: 'Dirección'
+            city: 'Ciudad'
+            state: 'Estado'
+            zip_code: 'Código Zip'
+            country: 'País'
+            phone_number: 'Número de Teléfono'
+          shipping_address:
+            address: 'Dirección'
+            city: 'Ciudad'
+            state: 'Estado'
+            zip_code: 'Código Zip'
+            country: 'País'
+            phone_number: 'Número de Teléfono'
+
+          product_table:
+            qty: 'Cantidad'
+            item: 'Item'
+            price: 'Precio'
+            tax: 'Impuestos'
+            subtotal: 'Sub Total'
+            total_excl: 'Total (excluyendo impuestos)'
+            discount: 'Descuento'
+            total_shipping: 'Total envío'
+            total_price: 'Precio Total'
+
+        checkout:
+          user_info:
+            firstname: 'Nombre(s)'
+            lastname: 'Apellido'
+            address: 'Dirección'
+            city: 'Ciudad'
+            country: 'País'
+            state: 'Estado'
+            code_zip: 'Código Zip'
+            billing_address: "Dirección de facturación"
+            shipping_address: 'Dirección de envío'
+            copy_address: 'Copiar mis datos de envío'
+            phone_number: 'Número de Teléfono'
+            next: 'Siguiente'
+
+          payments:
+            title: 'Método de Pago'
+            paypal: 'Paypal'
+            bank_transfer: 'Transferencia Bancaria'
+            account_number: 'Número de Cuenta'
+            details_transfer: 'Detalles'
+            credit_card: 'Tarjeta de Crédito'
+            authorize_net: 'Authorize.net'
+            stripe: 'Stripe'
+            order_now: 'Comprar'
+            order_details: 'Detalles de Orden'
+            first_name: 'Nombre'
+            last_name: 'Apellidos'
+            card_number: 'Tarjeta de Crédito'
+            exp_date: 'Fecha de expiración'
+            cvv: 'Código CVV'
+            code_key: 'Código / ID / KEY / TICKET'
+            bank_owner: 'Nombre de Cuenta en el banco'
+            bank_name: 'Nombre del banco'
+            descr: 'Descripción'
+
+          products_detail:
+            title: 'Información de Pedido'
+            user_details: 'Detalles de Comprador'
+            name: 'Nombre'
+            email: 'Correo Electrónico'
+            phone: 'Teléfono'
+
+            shipping_options: 'Opciones de Envío'
+            shipping_method: 'Método de envío'
+            no_shipping_methods: 'No se han definido los métodos de envío'
+            create_order: 'Crear Orden de Compra'
+            total: 'Total'
+            qty: 'Cantidad'
+            item: 'Item'
+            price: 'Precio'
+            tax: 'Impuestos'
+            subtotal: 'Sub Total'
+            total_excl: 'Total (excluyendo impuestos)'
+            discount: 'Descuento'
+            total_shipping: 'Total envío'
+            total_price: 'Precio Total'
+
+          details:
+            coupon: 'Cupón de descuento'
+            coupon_msg: 'Ingrese aquí su código'
+            apply: 'Aplicar'
+            shipping_options: 'Opciones de Envío'
+            next: 'Siguiente'
+
+        cart_widget:
+          shopping_cart: 'Carro de compras'
+          products_list: 'Lista de productos'
+          purchase: 'Comprar'
+          my_orders: 'Mis Ordenes'
+          total_items: '(%{qty}) items'
+          total: 'Total'
+
+
+
+
+
+
+
+

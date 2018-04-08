@@ -1,0 +1,176 @@
+<% cama_load_custom_assets({"plugin_ecommerce"=>{css: [plugin_asset("checkout")] } }) %>
+<% if warning.present? %>
+    <div class="alert alert-danger"><%= raw warning.join("<br>") %></div>
+<% end %>
+<div id="cama_checkout_view" class="row checkout_view">
+    <%= render 'post_types/commerce/cart_widget' %>
+    <h1><%= t('.check_out_process', default: 'Checkout Booking Process') %></h1>
+    <div class="stepwizard col-md-offset-3 col-sm-offset-3">
+        <div class="stepwizard-row setup-panel">
+            <div class="stepwizard-step">
+                <a href="#step-1" type="button" class="btn btn-default btn-circle" disabled="disabled">1</a>
+                <p><%= t('.step', default: 'Step') %> 1- Review Guest Requirements</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                <p><%= t('.step', default: 'Step') %> 2- Quantity Guest Booking</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                <p><%= t('.step', default: 'Step') %> 3- Review and Pay</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<div class="products-page row" id="product_view">
+
+    <div class="col-md-9 product_info_col">
+            <div class="col-md-7 dress-info">
+
+    <div class="steps_content">
+        <div class="row setup-content" id="step-1">
+            <%= form_tag(plugins_ecommerce_checkout_step_address_path, :method => "post", :class => "col-md-12", id: 'checkout_address_form') do %>
+                <%= render plugin_view('partials/checkout/user_info') %>
+                <div class="clearfix"></div>
+            <% end %>
+        </div>
+        <div class="row setup-content" id="step-2">
+            <%= form_tag(plugins_ecommerce_checkout_step_shipping_path, :method => "post", :class => "col-md-12", id: 'checkout_shipping_form') do %>
+                <%= render plugin_view('partials/checkout/details') %>
+            <% end %>
+        </div>
+        <div class="row setup-content" id="step-3">
+
+        </div>
+    </div>
+
+                            <div class="clearfix"></div>
+                </div>
+        <div class="col-md-5 zoom-grid">
+            <div class="flexslider" id="product_slider">
+
+                <ul class="slides">
+<h1> Booking Services Info</h1>
+
+<div class="bs-example" data-example-id="small-headings"> 
+<table class="table"> 
+<tbody> 
+<% 
+  product_item = @cart.product_items.first
+  product = product_item.product.decorate
+  img = product.the_photos.first
+%>
+<tr> <td><h3><%= product.the_title %> <hr> <small><%= image_tag img.cama_parse_image_version %></small></h3></td> </tr> 
+<tr> <td><h3>BOOKING DATE : <small><%= product_item.try(:booking_date).try(:strftime, '%A, %d %b %Y %l:%M %p') %></small></h3></td> </tr>
+ <tr> <td><h4>Cancellation Policy Get a full refund if you cancel within 24 hours of purchase.</h4></td> </tr> 
+  </tbody> </table> </div>
+
+
+
+
+<style type="text/css">
+/*
+ * Examples
+ *
+ * Isolated sections of example content for each component or feature. Usually
+ * followed by a code snippet.
+ */
+
+.bs-example {
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 0 -15px 15px;
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+  -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+          box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+}
+/* Echo out a label for the example */
+.bs-example:after {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #959595;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  content: "BOOKING";
+}
+
+.bs-example-padded-bottom {
+  padding-bottom: 24px;
+}
+
+/* Tweak display of the code snippets when following an example */
+.bs-example + .highlight,
+.bs-example + .zero-clipboard + .highlight {
+  margin: -15px -15px 15px;
+  border-width: 0 0 1px;
+  border-radius: 0;
+}
+
+/* Make the examples and snippets not full-width */
+@media (min-width: 768px) {
+  .bs-example {
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #fff;
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 4px 4px 0 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .bs-example + .highlight,
+  .bs-example + .zero-clipboard + .highlight {
+    margin-top: -16px;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  .bs-example-standalone {
+    border-radius: 4px;
+  }
+}
+
+/* Undo width of container */
+.bs-example .container {
+  width: auto;
+}
+
+
+
+
+/* Tables */
+.bs-example > .table-responsive > .table {
+  background-color: #fff;
+}
+
+
+
+</style>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+
+
+</div>
+<script>jQuery(function(){ cama_checkout_actions(); <% if flash[:payment_error].present? %> setTimeout(function(){ $('#cama_checkout_view #checkout_shipping_form').submit(); }, 200); <% end %> })</script>
+

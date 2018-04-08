@@ -1,0 +1,38 @@
+<%= render 'post_types/commerce/cart_widget' %>
+<h2><%= t('.title', default: 'My Booking') %></h2>
+<table id="table-shopping-cart" class="table">
+  <thead>
+  <tr>
+    <th><%= t('.id', default: 'ID') %></th>
+    <th><%= t('.status', default: 'Status') %></th>
+    <th><%= t('.products', default: 'services') %></th>
+    <th><%= t('.total_amount', default: 'Total Amount') %></th>
+    <th><%= t('.coupon', default: 'Coupon') %></th>
+    <th><%= t('.paid_amount', default: 'Paid Amount') %></th>
+    <th style="width: 100px"><%= t('.order_date', default: 'Booking Date') %></th>
+    <th><%= t('.method', default: 'Payment Method') %></th>
+    <th style="width: 90px"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.slug %></td>
+        <td><%= raw order.the_status  %></td>
+        <td>
+          <% order.product_items.each do |item| %>
+              <%= item.qty %> x <%= item.cache_the_title %> (<%= item.cache_the_price %>) <br>
+          <% end %>
+        </td>
+        <td><%= order.cache_the_sub_total  %></td>
+        <td><%= order.cache_the_discounts  %></td>
+        <td><%= order.cache_the_total  %></td>
+        <td><%= order.product_items.first.try(:booking_date).try(:strftime, '%A, %d %b %Y %l:%M %p') %></td>
+        <td><%= order.payment_method.name rescue '' %></td>
+        <td>
+          <a href="<%= plugins_ecommerce_order_show_path(order: order.slug) %>" class="btn btn-default btn-xs"><%= t('.view', default: 'View') %></a>
+        </td>
+      </tr>
+  <% end  %>
+  </tbody>
+</table>

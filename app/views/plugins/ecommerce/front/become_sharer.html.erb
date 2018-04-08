@@ -1,0 +1,422 @@
+
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+
+
+
+
+  <style>
+
+  .jumbotron {
+      background-image: url("https://saigonyo.vn/media/1/banner-dep.jpg") ;
+      width: 100%;
+      height: 100%;
+      color: #f8fbef;
+      padding-top: 46px;
+      padding-bottom: 150px;
+      font-family: "Work Sans", WorkSans-Regular;
+
+
+  }
+
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+
+  .logo-small {
+      color: #816263;
+     font-size: 50px!important;
+  }
+  .logo {
+      color: #816263;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #816263;
+  }
+  .carousel-indicators li {
+      border-color: #816263;
+  }
+  .carousel-indicators li.active {
+      background-color: #816263;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #816263; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #816263;
+      background-color: #fff !important;
+      color: #816263;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #816263 !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+
+
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  </style>
+
+
+<div class="jumbotron text-center">
+  <h2><%= t("camaleon_cms.common.why_do_you") %> </h2>
+  <h3><%= t("camaleon_cms.common.share_talents") %></h3> 
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h1><%= t("camaleon_cms.common.share_passion") %></h1><br>
+  <h3><%= t("camaleon_cms.common.create_unique") %></h3>
+    <h4><%= t("camaleon_cms.common.it_is_your") %></h4>
+  <h4><%= t("camaleon_cms.common.build_and_share") %></h4>
+
+
+
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://saigonyo.vn/media/1/pass01.jpg" alt="Paris" width="400" height="300">
+        <p><strong> <%= t("camaleon_cms.common.art") %></strong></p>
+                <p> <%= t("camaleon_cms.common.experience_local") %> ...</p>
+ 
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://saigonyo.vn/media/1/pass02.jpg" alt="New York" width="400" height="300">
+        <p><strong> <%= t("camaleon_cms.common.life_style") %></strong></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://saigonyo.vn/media/1/pass03.jpg" alt="San Francisco" width="400" height="300">
+        <p><strong>  <%= t("camaleon_cms.common.music_showbiz") %></strong></p>
+        <p> <%= t("camaleon_cms.common.experience_local") %> ...</p>
+      </div>
+    </div>
+
+      <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://saigonyo.vn/media/1/pass04.jpg" alt="Paris" width="400" height="300">
+        <p><strong>  <%= t("camaleon_cms.common.calli_pain") %></strong></p>
+        <p> <%= t("camaleon_cms.common.experience_local") %> ...</p>
+
+      </div>
+    </div>
+    
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://saigonyo.vn/media/1/pass05.jpg" alt="New York" width="400" height="300">
+        <p><strong>  <%= t("camaleon_cms.common.dance_course") %></strong></p>
+      </div>
+    </div>
+
+
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://saigonyo.vn/media/1/pass06.jpg" alt="San Francisco" width="400" height="300">
+        <p><strong>   <%= t("camaleon_cms.common.learn_boat") %> </strong></p>
+        <p> <%= t("camaleon_cms.common.experience_local") %>  ...</p>
+      </div>
+    </div>
+      <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://saigonyo.vn/media/1/pass07.jpg" alt="Paris" width="400" height="300">
+        <p><strong>  <%= t("camaleon_cms.common.wake_cano") %></strong></p>
+        <p> <%= t("camaleon_cms.common.experience_local") %>    ...</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://saigonyo.vn/media/1/pass08.jpg" alt="New York" width="400" height="300">
+        <p><strong>  <%= t("camaleon_cms.common.horses_ride") %></strong></p>
+        <p> <%= t("camaleon_cms.common.experience_local") %>    ...</p>
+      </div>
+    </div>
+
+
+
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="https://saigonyo.vn/media/1/pass09.jpg" alt="San Francisco" width="400" height="300">
+        <p><strong> <%= t("camaleon_cms.common.more_experiences") %></strong></p>
+        <p>  <%= t("camaleon_cms.common.let's") %> ...</p>
+      </div>
+    </div>
+  </div><br>
+  
+  <h2>  <%= t("camaleon_cms.common.how_to_start") %></h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"  <%= t("camaleon_cms.common.get_to_passion") %>"<br><span>  <%= t("camaleon_cms.common.review_our_quality") %>.</span></h4>
+      </div>
+      <div class="item">
+        <h4>"  <%= t("camaleon_cms.common.design_submit") %>"<br><span>  <%= t("camaleon_cms.common.build_submit") %>
+        </span></h4>
+      </div>
+      <div class="item">
+        <h4>" <%= t("camaleon_cms.common.share_policies") %>" <br><span> <%= t("camaleon_cms.common.one_the_experiences") %></span></h4>
+      </div>
+      <div class="item">
+        <h4>"  <%= t("camaleon_cms.common.manage_on") %>"<br><span> <%= t("camaleon_cms.common.kepp_track") %></span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2><%= t("camaleon_cms.common.build_share_on") %></h2>
+  <h4><%= t("camaleon_cms.common.build_up_a") %></h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4> <%= t("camaleon_cms.common.love_community") %></h4>
+      <p> <%= t("camaleon_cms.common.base_on_the_love") %></p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-user logo-small"></span>
+      <h4> <%= t("camaleon_cms.common.your_talents") %></h4>
+      <p> <%= t("camaleon_cms.common.you_are_talents") %></p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-cog logo-small"></span>
+      <h4> <%= t("camaleon_cms.common.challenges_experiences") %></h4>
+      <p> <%= t("camaleon_cms.common.have_you_experiece") %></p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-road logo-small"></span>
+      <h4> <%= t("camaleon_cms.common.exploring_yourseft") %></h4>
+      <p> <%= t("camaleon_cms.common.pass_through") %></p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-tree-deciduous logo-small"></span>
+      <h4> <%= t("camaleon_cms.common.future_orientation") %></h4>
+      <p> <%= t("camaleon_cms.common.help_orient_the") %></p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-book logo-small"></span>
+      <h4 style="color:#303030;"> <%= t("camaleon_cms.common.civilized_community") %></h4>
+      <p>  <%= t("camaleon_cms.common.a_civilized") %></p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Container (Pricing Section) -->
+<div id="pricing" class="container-fluid">
+  <div class="text-center">
+    <h2><%= t("camaleon_cms.common.become_a_sharer") %></h2>
+    <h4> <%= t("camaleon_cms.common.why_you'll") %>
+</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1> <%= t("camaleon_cms.common.extra_income") %> </h1>
+        </div>
+        <div class="panel-body">
+          <p><%= t("camaleon_cms.common.from_saving") %></p>
+        </div>
+        <div class="panel-footer">
+          <h3><%= t("camaleon_cms.common.become_a_sharer") %></h3>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1> <%= t("camaleon_cms.common.support_ok") %></h1>
+        </div>
+        <div class="panel-body">
+          <p> <%= t("camaleon_cms.common.get_tips_and") %></p>
+        </div>
+        <div class="panel-footer">
+          <h3><%= t("camaleon_cms.common.become_a_sharer") %></h3>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1> <%= t("camaleon_cms.common.flexibility_ok") %></h1>
+        </div>
+        <div class="panel-body">
+          <p> <%= t("camaleon_cms.common.you_set_your") %></p>
+        </div>
+        <div class="panel-footer">
+          <h3><%= t("camaleon_cms.common.become_a_sharer") %></h3>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2><%= t("camaleon_cms.common.ready_to_share") %></h2><br>
+      <p><%= t("camaleon_cms.common.start_by_designing") %></p><br><br>
+
+<p><%= t("camaleon_cms.common.ready_to_become") %></p>
+      <br>
+      <select class="selectpicker" data-show-subtext="true" data-live-search="true">
+        <option data-subtext="Tp.Hcmc">Sai Gon (Locals)</option>
+        <option data-subtext="Tp.HaNoi ">Ha Noi (Locals)</option>
+        <option data-subtext="Tp.CanTho ">Can Tho (Locals)</option>
+        <option data-subtext="Tp.DaNang ">Da Nang (Locals)</option>
+        <option data-subtext="Tp.NhaTrang ">Nha Trang (Locals)</option>
+        <option data-subtext="Tp.Ha Long" >Ha Long (Locals)</option>
+        <option data-subtext="Tp.Hue" >Tp Hue (Locals)</option>
+      </select><a  class="btn btn-default btn-lg" href="/plugins/ecommerce/register">
+                       Create An Experience
+                </a>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo"></span>
+    </div>
+  </div>
+</div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>

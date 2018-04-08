@@ -1,0 +1,435 @@
+
+
+<div class="jumbotron text-center">
+  <h1>How can we help?</h1> 
+  <p>Saigonyo's Talents</p> 
+  <form>
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Ask a question or search by keyword" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>       <%= t("camaleon_cms.common.how_do_booking") %></h2><br>
+      <p><%= t("camaleon_cms.common.use_the") %></p>
+      <br><button id='modal-launcher' class="btn btn-default btn-lg" data-toggle="modal" data-target="#login-modal">
+                      Sign In
+                </button>
+                
+                <button id='modal-launcher' class="btn btn-default btn-lg" data-toggle="modal" data-target="#login-modal">
+                      Sign Up
+                </button>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-question-sign logo"></span>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Experience The World With Saigonyo Technology</h2><br>
+      <h4><strong class="glyphicon glyphicon-ok"></strong> <%= t("camaleon_cms.common.use_the_saigonyo") %></h4><br>
+      <p><strong class="glyphicon glyphicon-ok"></strong> <%= t("camaleon_cms.common.look_for") %></p>
+      <p><strong class="glyphicon glyphicon-ok"></strong> <%= t("camaleon_cms.common.choose_a") %></p>
+      <p><strong class="glyphicon glyphicon-ok"></strong> <%= t("camaleon_cms.common.book_any") %></p>
+      <p><strong class="glyphicon glyphicon-ok"></strong> <%= t("camaleon_cms.common.if_you") %></p>
+      <p><strong class="glyphicon glyphicon-ok"></strong> <%= t("camaleon_cms.common.make_sure") %></p>
+
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="">
+                                <span>1</span>
+                                <%= t("camaleon_cms.common.how_does") %>
+
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <p><%= t("camaleon_cms.common.once_your") %> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span>2</span>
+                                <%= t("camaleon_cms.common.what_happens") %>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <p><%= t("camaleon_cms.common.you_need") %> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <span>3</span>
+                                <%= t("camaleon_cms.common.how_do") %>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <p><%= t("camaleon_cms.common.reviewing_an") %> </p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <span>4</span>
+                                <%= t("camaleon_cms.common.how_do_I") %>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            <p><%= t("camaleon_cms.common.you_get") %> </p>
+                            <p><%= t("camaleon_cms.common.we_recommend") %></p>
+                        </div>
+                    </div>
+                </div>
+                                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFive">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <span>5</span>
+                                <%= t("camaleon_cms.common.how_do_confirmation") %>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                        <div class="panel-body">
+                            <p><%= t("camaleon_cms.common.how_do_confir_content") %></p>
+                        </div>
+                    </div>
+                </div>
+                                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingSix">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                <span>6</span>
+                                <%= t("camaleon_cms.common.are_children") %>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                        <div class="panel-body">
+                            <p><%= t("camaleon_cms.common.depend_on") %> </p>
+                        </div>
+                    </div>
+                </div>
+                                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingSeven">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                <span>7</span>
+                                <%= t("camaleon_cms.common.how_do_reviews") %>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                        <div class="panel-body">
+                            <p class="glyphicon glyphicon-ok"><%= t("camaleon_cms.common.all_the") %> </p>
+
+                            <p class="glyphicon glyphicon-ok"><%= t("camaleon_cms.common.you_have") %> </p>
+
+                            <p class="glyphicon glyphicon-asterisk" style="font-size: 14; font-weight: bold;"> <%= t("camaleon_cms.common.writing_a") %>:<br>
+                            <span class="glyphicon glyphicon-ok"><%= t("camaleon_cms.common.to_leave") %></span> </p><br>
+
+                            <p class="glyphicon glyphicon-asterisk" style="font-size: 14; font-weight: bold;"> <%= t("camaleon_cms.common.review_history") %>:<br>
+                            <span class="glyphicon glyphicon-ok"><%= t("camaleon_cms.common.to_see_reviews") %></span><br>
+                            <br><span class="glyphicon glyphicon-ok"><%= t("camaleon_cms.common.our_community") %></span> </p><br>
+
+                            <p class="glyphicon glyphicon-asterisk" style="font-size: 14; font-weight: bold;"> <%= t("camaleon_cms.common.group_reviews") %>:<br>
+                            <span class="glyphicon glyphicon-ok"><%= t("camaleon_cms.common.if_a_reservation") %></span> </p>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingEight">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                <span>8</span>
+                                <%= t("camaleon_cms.common.what_happens_if") %>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                        <div class="panel-body">
+                            <p><%= t("camaleon_cms.common.in_each") %> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+<style type="text/css">
+  
+a:hover,a:focus{
+    text-decoration: none;
+    outline: none;
+}
+#accordion .panel{
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 40px;
+    margin-bottom: 10px;
+}
+#accordion .panel-heading{
+    padding: 0;
+}
+#accordion .panel-title a{
+    display: block;
+    padding: 15px;
+    background: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    border: 2px solid #333;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    box-shadow: none;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+#accordion .panel-title a span{
+    display: block;
+    width: 40px;
+    height: 110%;
+    line-height: 70px;
+    background: #333;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: -2px;
+    left: -40px;
+}
+#accordion .panel-title a span:before,
+#accordion .panel-title a span:after{
+    content: "";
+    border-top: 20px solid #fff;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    position: absolute;
+    left: 0;
+}
+#accordion .panel-title a span:before{
+    top: -1px;
+}
+#accordion .panel-title a span:after{
+    border-top-color: #333;
+    bottom: -20px;
+    z-index: 1;
+}
+#accordion .panel-body{
+    font-size: 14px;
+    color: #808080;
+    line-height: 23px;
+    border-top: none;
+}
+#accordion .panel-body p{
+    margin-bottom: 0;
+}
+
+</style>
+
+  <style>
+
+  .jumbotron {
+      background-image: url("https://saigonyo.vn/media/1/help-me.png") ;
+      color: #fff;
+      padding: 100px 25px;
+     font-family: "Work Sans", WorkSans-Regular;
+
+
+  }
+
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+
+  .logo-small {
+      color: #816263;
+     font-size: 50px!important;
+  }
+  .logo {
+      color: #816263;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #816263;
+  }
+  .carousel-indicators li {
+      border-color: #816263;
+  }
+  .carousel-indicators li.active {
+      background-color: #816263;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #816263; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #816263;
+      background-color: #fff !important;
+      color: #816263;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #816263 !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+
+
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  </style>

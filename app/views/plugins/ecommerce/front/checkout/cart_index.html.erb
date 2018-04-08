@@ -1,0 +1,65 @@
+<div class="cart_view">
+    <%= render 'post_types/commerce/cart_widget' %>
+
+  <h1><a  class="cardsss" href="<%= current_site.the_url %>"><%= t('.title', default: 'Continue Booking Services') %></a></h1><br><hr>
+
+
+  <%= form_tag(plugins_ecommerce_checkout_cart_update_path, :method => "post", :class => "form") do %>
+      <table id="table-shopping-cart" class="table table-bordered">
+          <thead>
+          <tr>
+              <th id="item_col"><%= t('.item', default: 'Item') %></th>
+              <th id="price_col"><%= t('.price', default: 'Price') %></th>
+              <th id="price_col"><%= t('.tax', default: 'Tax') %></th>
+              <th id="price_col"><%= t('.booking_date', default: 'Booking Date') %></th>
+              <th id="quantity_col"><%= t('.quantity', default: 'Qty Guest') %></th>
+              <th id="subtotal_col"><%= t('.subtotal', default: 'Subtotal') %></th>
+              <th></th>
+          </tr>
+          </thead>
+          <tbody>
+
+          <% @products.each do |item| product = item.product.decorate %>
+              <tr>
+                  <td><a href="<%= item.the_url %>"><%= item.the_title %></a></td>
+                  <td><%= item.the_price %></td>
+                  <td><%= item.the_tax %></td>
+                  <td><%= product.get_fields('start-date').first.to_time.strftime('%A, %d %b %Y %l:%M %p')%></td>
+
+                  <td>
+                      <input name="product_items[][item_id]" type="hidden" value="<%= item.id %>"/>
+                      <input class="text-qty" type="number" name="product_items[][qty]" value="<%= item.qty %>">
+                  </td>
+                  <td><%= item.the_sub_total %></td>
+
+                  <td>
+                      <a rel="nofollow" data-method="delete" href="<%= plugins_ecommerce_checkout_cart_remove_path(product_item_id: item.id) %>"><%= t('.delete', default: 'Remove') %></a>
+                  </td>
+              </tr>
+          <% end %>
+          </tbody>
+          <tfoot>
+          <tr>
+              <td colspan="4"></td>
+              <td><%= t('.subtotal', default: 'Subtotal') %></td>
+              <td><%= @cart.the_total_amount %></td>
+          </tr>
+          </tfoot>
+      </table>
+      <% if @products.size > 0 %>
+          <div class="text-right">
+              <button type="submit" class="btn btn-default"> <%= t('.update', default: 'Update') %> </button>
+              <a class="btn btn-info" href="<%= plugins_ecommerce_checkout_path %>"><i class="fa fa-shopping-cart"></i> <%= t('.proceed', default: 'Proceed to Checkout') %></a>
+          </div>
+      <% end %>
+  <% end %>
+</div>
+<style>
+.cardsss {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+</style>

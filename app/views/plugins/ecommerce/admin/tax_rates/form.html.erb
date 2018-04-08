@@ -1,0 +1,36 @@
+<div class="panel panel-default">
+    <div class="panel-heading ui-draggable-handle">
+        <h4><span class="fa fa-money"></span> <%= @tax_rate.new_record? ? t('plugins.ecommerce.new_tax_rate') : "#{t('plugins.ecommerce.edit_tax_rate')}: #{@tax_rate.name}" %></h4>
+    </div>
+    <%= form_for @tax_rate, url:{action: @tax_rate.new_record? ? :create : :update},  html: {class: 'validate-tax_rate', id: 'form-tax_rate'}  do |f| %>
+        <div class="panel-body">
+            <%= render partial: 'layouts/camaleon_cms/admin/form_error', locals: {data: @tax_rate} %>
+            <div class="form-group">
+                <%= f.label t('camaleon_cms.admin.table.name') %><br>
+                <%= f.text_field :name, :class => "form-control required" %>
+            </div>
+            <% options = params[:options].present? ? params[:options] : @tax_rate.options rescue {} %>
+            <div class="form-group">
+                <label for=""><%= t('plugins.ecommerce.table.rate') %></label> (%)<br>
+                <%= number_field_tag "options[rate]", options[:rate] || '', :class => "form-control required" %>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <label><%= f.check_box :status %> &nbsp; <%= t('plugins.ecommerce.active')%></label>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <a class="btn btn-default" href="<%= url_for action: :index %>" role="back"><%= t('camaleon_cms.admin.button.back')%></a>
+            <button class="btn btn-primary pull-right" type="submit"><%= t('camaleon_cms.admin.button.submit')%></button>
+        </div>
+    <% end %>
+</div>
+
+<script>
+  jQuery(function(){
+    jQuery( '#form-tax_rate' ).on( "change", '#options_rate', function() {setTimeout(function(){jQuery(this).val(Math.abs(jQuery(this).val()) || 0);}.bind(this), 60)});
+  })
+</script>
